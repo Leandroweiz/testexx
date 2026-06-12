@@ -1,0 +1,1164 @@
+/* ==========================================================================
+   VARIÁVEIS DE CORES E CONFIGURAÇÕES
+   ========================================================================== */
+:root {
+    /* Cores do modo escuro (padrão do site) */
+    --cor-fundo: #06121f;
+    --cor-fundo-card: #0a2235;
+    --cor-fundo-extra: #102619;
+    --cor-texto: #f4fbff;
+    --cor-texto-mutado: #b8cdda;
+    --cor-verde-destaque: #36ff91;
+    --cor-azul-claro: #39d6ff;
+    --cor-amarelo: #ffd166;
+    --cor-borda: rgba(255, 255, 255, 0.15);
+    
+    /* Tamanho base fixo para boa leitura em todas as páginas */
+    --tamanho-base-fonte: 17px;
+    --raio-borda: 12px;
+}
+
+/* CORREÇÃO: Vinculado ao elemento html (raiz) onde o script de fato insere a classe */
+html.modo-claro {
+    --cor-fundo: #eef8f5;
+    --cor-fundo-card: #ffffff;
+    --cor-fundo-extra: #cfe9dc;
+    --cor-texto: #10212a;
+    --cor-texto-mutado: #4a5d68;
+    --cor-verde-destaque: #087a46;
+    --cor-azul-claro: #006f8a;
+    --cor-amarelo: #9a6a00;
+    --cor-borda: rgba(16, 75, 62, 0.25);
+}
+
+html.modo-claro body {
+    background: linear-gradient(135deg, #e7f6ef, #f8fffb 52%, #d6eddf) fixed;
+}
+
+/* ==========================================================================
+   RESET DO NAVEGADOR
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Essencial pra evitar barra de rolagem horizontal */
+}
+
+html {
+    scroll-behavior: smooth; /* Deixa o salto dos links âncora suave */
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: var(--tamanho-base-fonte);
+    color: var(--cor-texto);
+    /* CORREÇÃO: Transição adicionada para suavizar a troca do plano de fundo */
+    background: linear-gradient(135deg, var(--cor-fundo), var(--cor-fundo-card) 60%, var(--cor-fundo-extra)) fixed;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* ==========================================================================
+   MÁGICA DAS IMAGENS REPROPORCIONADAS
+   ========================================================================== */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* ÍCONES PEQUENOS DOS CARDS */
+.icone-card img,
+.cartao-item img,
+.logo-projeto img {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: contain !important; 
+    margin: 0 auto 12px auto !important;
+    display: block !important;
+}
+
+/* IMAGENS GRANDES */
+.conteudo-principal img,
+.media-panel img,
+.form-card img {
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 380px !important; 
+    border-radius: var(--raio-borda) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+    margin: 24px auto !important;
+    display: block !important;
+}
+
+/* ==========================================================================
+   MENU SUPERIOR
+   ========================================================================== */
+.menu-topo {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    background-color: rgba(6, 18, 31, 0.8);
+    backdrop-filter: blur(12px); 
+    border-bottom: 1px solid var(--cor-borda);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    z-index: 999;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* CORREÇÃO: Seletor corrigido para refletir a classe no HTML */
+html.modo-claro .menu-topo {
+    background-color: rgba(222, 243, 232, 0.92);
+    box-shadow: 0 10px 28px rgba(8, 122, 70, 0.08);
+}
+
+.logo-projeto {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--cor-texto);
+}
+
+.links-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.links-menu a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.links-menu a:hover, .links-menu a.link-ativo {
+    color: var(--cor-verde-destaque);
+    background: rgba(54, 255, 145, 0.08);
+}
+
+html.modo-claro .links-menu a:hover,
+html.modo-claro .links-menu a.link-ativo {
+    background: rgba(8, 122, 70, 0.12);
+}
+
+/* Botões de acessibilidade */
+.botoes-acessibilidade {
+    display: flex;
+    gap: 8px;
+}
+
+.botao-tema {
+    background: var(--cor-fundo-card);
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-borda);
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.botao-tema:hover {
+    border-color: var(--cor-verde-destaque);
+    transform: translateY(-2px);
+}
+
+html.modo-claro .botao-tema {
+    background: #ffffff;
+    border-color: rgba(8, 122, 70, 0.28);
+    color: #0f2f23;
+    box-shadow: 0 8px 22px rgba(8, 122, 70, 0.08);
+}
+
+html.modo-claro .botao-tema:hover {
+    background: #eef9f2;
+    border-color: var(--cor-verde-destaque);
+    box-shadow: 0 12px 28px rgba(8, 122, 70, 0.14);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.botoes-acessibilidade--oculto {
+    display: none;
+}
+
+/* ==========================================================================
+   PORTAL DE ENTRADA (INDEX.HTML)
+   ========================================================================== */
+.corpo-portal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 24px; /* AJUSTE: Maior respiro nas bordas do portal */
+    text-align: center;
+}
+
+.menu-topo-portal {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px 4%;
+}
+
+.conteudo-portal {
+    display: flex;
+    flex-direction: column; /* AJUSTE: Permite fluxo vertical para caixas expandidas de conteúdo */
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    z-index: 5;
+    width: 100%;
+}
+
+.caixa-boas-vindas {
+    max-width: 700px; /* AJUSTE: Ligeiramente maior para acomodar melhor os textos */
+    background: rgba(10, 34, 53, 0.6);
+    padding: 50px 40px; /* AJUSTE: Mais padding interno para o texto respirar */
+    border-radius: var(--raio-borda);
+    border: 1px solid var(--cor-borda);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s, border-color 0.3s;
+    margin-bottom: 20px;
+}
+
+/* Suavização de transparência da caixa no modo claro */
+html.modo-claro .caixa-boas-vindas {
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 24px 60px rgba(8, 122, 70, 0.14);
+}
+
+.titulo-principal {
+    font-size: clamp(2.2rem, 6vw, 4.2rem);
+    color: var(--cor-texto);
+    margin: 20px 0; /* AJUSTE: Melhor distanciamento do título */
+    text-shadow: 0 0 20px rgba(54, 255, 145, 0.3);
+}
+
+.subtitulo-projeto {
+    font-size: 1.15rem;
+    color: var(--cor-texto-mutado);
+    margin-bottom: 35px;
+    line-height: 1.6; /* AJUSTE: Leitura mais fluida */
+}
+
+/* O Botão de Entrar */
+.botao-entrar {
+    background-color: var(--cor-verde-destaque);
+    color: #000;
+    font-weight: 800;
+    padding: 14px 36px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(54, 255, 145, 0.4);
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+html.modo-claro .botao-entrar {
+    color: #fff; /* Garante legibilidade no modo claro */
+    box-shadow: 0 10px 26px rgba(8, 122, 70, 0.22);
+}
+
+html.modo-claro .botao-entrar:hover {
+    box-shadow: 0 14px 34px rgba(8, 122, 70, 0.3);
+}
+
+.botao-entrar:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 30px var(--cor-verde-destaque);
+}
+
+/* ==========================================================================
+   ESTILOS DE GRIDS E CARDS
+   ========================================================================== */
+.conteudo-principal, main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px; /* AJUSTE: Padding reforçado nas laterais (essencial para o celular) */
+}
+
+/* Estilização focada na leitura de parágrafos longos inseridos no fluxo principal do HTML */
+.conteudo-principal p, main p {
+    line-height: 1.6; /* AJUSTE: Altura perfeita de linha para blocos longos */
+    margin-bottom: 1.5rem; /* AJUSTE: Separação confortável entre parágrafos */
+    color: var(--cor-texto-mutado);
+}
+
+/* Garante que textos puros não estiquem infinitamente na tela horizontal */
+.conteudo-principal .section > p, 
+main .section > p {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-cards {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 25px;
+    justify-content: center;
+    padding: 30px 0; /* AJUSTE: Mais espaço limitando o grid */
+}
+
+.cards-inicio-horizontal {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+
+.cards-inicio-horizontal .caixa-card {
+    width: 100%;
+}
+
+/* CORREÇÃO: Removidos '!important' fixos para permitir a herança dinâmica das variáveis */
+.caixa-card,
+.cartao-item {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    padding: 30px 25px; /* AJUSTE: Aumento sutil no respiro interno */
+    width: 310px; 
+    max-width: 100%;
+    transition: transform 0.3s ease, border-color 0.3s, background-color 0.3s;
+    text-align: center;
+}
+
+.caixa-card:hover,
+.cartao-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-azul-claro);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.caixa-card h3,
+.cartao-item h3 {
+    color: var(--cor-azul-claro);
+    margin-bottom: 14px; /* AJUSTE: Mais espaço abaixo do título interno */
+    font-size: 1.25rem;
+}
+
+/* Parágrafos pequenos internos dos cards (não afeta os blocos grandes externos) */
+.caixa-card p,
+.cartao-item p {
+    color: var(--cor-texto-mutado);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0; /* Reseta margem inferior de parágrafos curtos em cards */
+}
+
+/* Seções estruturadas */
+.section, section {
+    padding: 50px 0; /* AJUSTE: Seções ganham mais independência vertical */
+    width: 100%;
+}
+
+.form-card {
+    background: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    padding: 40px 35px; /* AJUSTE: Mais espaço interno para as grandes redações acadêmicas */
+    max-width: 800px; /* AJUSTE: Largura máxima otimizada para leitura confortável */
+    margin: 30px auto; /* AJUSTE: Centralização inteligente */
+    transition: background 0.3s, border-color 0.3s;
+}
+
+/* Ajuste específico para os textos gerados dentro do form-card */
+.form-card p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: left; /* Garante que redações longas fiquem alinhadas à esquerda/justificadas */
+}
+.form-card p:last-child {
+    margin-bottom: 0; /* Remove sobra no final da caixa */
+}
+
+html.modo-claro .conteudo-principal img,
+html.modo-claro .media-panel img,
+html.modo-claro .form-card img {
+    box-shadow: 0 12px 28px rgba(17, 79, 57, 0.16) !important;
+}
+
+html.modo-claro .caixa-card,
+html.modo-claro .cartao-item,
+html.modo-claro .form-card {
+    border-color: rgba(8, 122, 70, 0.18);
+    box-shadow: 0 12px 30px rgba(17, 79, 57, 0.08);
+}
+
+html.modo-claro .caixa-card:hover,
+html.modo-claro .cartao-item:hover {
+    border-color: rgba(0, 111, 138, 0.45);
+    box-shadow: 0 16px 36px rgba(17, 79, 57, 0.14);
+}
+
+/* Utilitários visuais usados para manter o HTML sem CSS inline */
+.u-texto-centro { text-align: center; }
+.u-margem-centro { margin-left: auto; margin-right: auto; }
+.u-mt-20 { margin-top: 20px; }
+.u-mt-30 { margin-top: 30px; }
+.u-mt-40 { margin-top: 40px; }
+.u-mb-4 { margin-bottom: 4px; }
+.u-mb-8 { margin-bottom: 8px; }
+.u-mb-12 { margin-bottom: 12px; }
+.u-mb-15 { margin-bottom: 15px; }
+.u-mb-25 { margin-bottom: 25px; }
+.u-mb-30 { margin-bottom: 30px; }
+.u-mb-35 { margin-bottom: 35px; }
+.u-p-20 { padding: 20px; }
+.u-p-35 { padding: 35px; }
+.u-cor-texto { color: var(--cor-texto); }
+.u-cor-mutada { color: var(--cor-texto-mutado); }
+.u-cor-verde { color: var(--cor-verde-destaque); }
+.u-cor-azul { color: var(--cor-azul-claro); }
+.u-cor-amarelo { color: var(--cor-amarelo); }
+.u-linha-15 { line-height: 1.5; }
+.u-linha-16 { line-height: 1.6; }
+.u-fonte-09 { font-size: 0.9rem; }
+.u-fonte-095 { font-size: 0.95rem; }
+.u-fonte-1 { font-size: 1rem; }
+.u-fonte-2 { font-size: 2rem; }
+.u-max-750 { max-width: 750px; }
+.u-max-800 { max-width: 800px; }
+.u-max-900 { max-width: 900px; }
+.u-max-1000 { max-width: 1000px; }
+.u-max-1050 { max-width: 1050px; }
+.u-max-1100 { max-width: 1100px; }
+.u-flex { display: flex; }
+.u-flex-wrap { flex-wrap: wrap; }
+.u-flex-coluna { flex-direction: column; }
+.u-justify-center { justify-content: center; }
+.u-gap-15 { gap: 15px; }
+.u-gap-25 { gap: 25px; }
+.u-gap-30 { gap: 30px; }
+.u-gap-35 { gap: 35px; }
+.u-gap-40 { gap: 40px; }
+.u-flex-1 { flex: 1; }
+.u-flex-12 { flex: 12; }
+.u-flex-2 { flex: 2; }
+.u-flex-1-2 { flex: 1.2; }
+.u-flex-1-5 { flex: 1.5; }
+.u-min-250 { min-width: 250px; }
+.u-min-280 { min-width: 280px; }
+.u-min-290 { min-width: 290px; }
+.u-min-300 { min-width: 300px; }
+
+/* Ajustes estruturais de títulos para evitar sobreposição */
+h1, h2, h3 {
+    margin-bottom: 1.2rem;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.titulo-com-linha {
+    line-height: 1.2;
+}
+
+.titulo-respiro {
+    margin: 15px 0 20px;
+}
+
+.titulo-respiro-curto {
+    margin: 10px 0 20px;
+}
+
+.titulo-respiro-medio {
+    margin: 12px 0 20px;
+}
+
+.titulo-respiro-largo {
+    margin: 15px 0;
+}
+
+.texto-centralizado-limitado {
+    margin: 15px auto 0;
+    max-width: 750px;
+}
+
+.banner-home-principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    text-align: left;
+    padding: 40px 0;
+}
+
+.card-video-chamada {
+    width: 100%;
+    text-align: left;
+    background: rgba(10, 34, 53, 0.5);
+    backdrop-filter: blur(8px);
+}
+
+html.modo-claro .card-video-chamada {
+    background: rgba(255, 255, 255, 0.82);
+}
+
+.video-abertura__player {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+    border-radius: var(--raio-borda);
+}
+
+.botao-compacto {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+}
+
+.botao-medio {
+    padding: 12px 28px;
+    font-size: 1rem;
+}
+
+.botao-link-flex {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.form-card--flexivel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+}
+
+.avatar-autor {
+    border-radius: 50%;
+    max-width: 200px !important;
+}
+
+.section-autor-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-top: 10px;
+}
+
+.bloco-autor {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    max-width: 1200px;
+    min-height: 330px;
+    padding: 45px;
+    border-color: transparent;
+    text-align: left;
+}
+
+/* Ajustes de espaçamento interno para as redações do autor */
+.bloco-autor__texto p {
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+html.modo-claro .bloco-autor {
+    border-color: transparent;
+}
+
+.bloco-autor--invertido {
+    flex-direction: row-reverse;
+}
+
+.bloco-autor__foto,
+.bloco-autor__texto {
+    flex: 1;
+    min-width: 280px;
+}
+
+.bloco-autor__foto img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    max-height: 570px !important;
+    object-fit: cover;
+    margin: 0 auto !important;
+}
+
+.galeria-missal-caixa {
+    max-width: min(1480px, calc(100vw - 32px));
+    width: min(1480px, calc(100vw - 32px));
+    padding: clamp(32px, 4vw, 54px);
+    margin-left: 50%;
+    margin-right: 0;
+    transform: translateX(-50%);
+}
+
+.galeria-missal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: clamp(20px, 3vw, 34px);
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.galeria-missal__item {
+    background: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.galeria-missal__item:hover {
+    transform: translateY(-4px);
+    border-color: var(--cor-azul-claro);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+}
+
+.galeria-missal__item img {
+    width: 100%;
+    aspect-ratio: 16 / 10.5;
+    object-fit: cover;
+    margin: 0 auto !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.credito-galeria {
+    color: var(--cor-texto-mutado);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 22px;
+    text-align: center;
+}
+
+html.modo-claro .galeria-missal__item {
+    border-color: rgba(8, 122, 70, 0.18);
+    box-shadow: 0 12px 30px rgba(17, 79, 57, 0.1);
+}
+
+.mapa-google {
+    width: 100%;
+    height: 430px;
+    border: 0;
+    border-radius: 8px;
+}
+
+.secao-destacada {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 45px 30px; /* AJUSTE: Respiro reforçado interno */
+    border-radius: var(--raio-borda);
+    border: 1px solid var(--cor-borda);
+}
+
+.secao-destacada p {
+    line-height: 1.6;
+    margin-bottom: 1.4rem;
+}
+
+html.modo-claro .secao-destacada {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(8, 122, 70, 0.18);
+}
+
+/* =======================================================
+   ESTILIZAÇÃO DA GALERIA DINÂMICA (ATUALIZADA)
+   ======================================================= */
+.galeria-dinamica {
+    display: flex;
+    justify-content: center;
+    gap: clamp(15px, 2.5vw, 30px);
+    flex-wrap: wrap;
+    padding: 20px 0;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* O card de cada foto */
+.galeria-item {
+    position: relative;
+    flex: 1;
+    min-width: 280px;
+    height: clamp(180px, 20vw, 220px);
+    overflow: hidden; /* Importante: impede que a foto vaze ao aumentar no hover */
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    cursor: default; /* Mudado para seta comum já que não abre modal */
+    background-color: var(--cor-fundo-card);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    
+    /* Aplica a animação de flutuação infinita para chamar atenção */
+    animation: flutuarAgro 6s ease-in-out infinite; /* CORREÇÃO: Nome ajustado removendo o espaço inválido */
+}
+
+html.modo-claro .galeria-item {
+    border-color: rgba(8, 122, 70, 0.18);
+    box-shadow: 0 10px 24px rgba(17, 79, 57, 0.08);
+}
+
+/* Aplica atrasos diferentes na animação para criar um ritmo visual natural */
+.galeria-item:nth-child(1) { animation-delay: 0s; }
+.galeria-item:nth-child(2) { animation-delay: 1.5s; }
+.galeria-item:nth-child(3) { animation-delay: 3s; }
+
+/* A imagem dentro do bloco */
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1); /* Transição suave do zoom */
+    
+    /* Reseta as propriedades globais de imagem que quebravam o layout */
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* EFEITO AO PASSAR O MOUSE (HOVER) */
+.galeria-item:hover {
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    border-color: var(--cor-verde-destaque);
+    animation-play-state: paused; /* Pausa o balanço automático na interação */
+}
+
+html.modo-claro .galeria-item:hover {
+    border-color: var(--cor-azul-claro);
+    box-shadow: 0 16px 36px rgba(17, 79, 57, 0.16);
+}
+
+/* A foto aumenta internamente (ZOOM) sem sair da borda do card */
+.galeria-item:hover img {
+    transform: scale(1.15); 
+}
+
+/* Legenda estilizada que surge de baixo */
+.galeria-item__legenda {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent, rgba(6, 18, 31, 0.95) 75%);
+    color: #ffffff;
+    padding: clamp(10px, 2vw, 15px);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+html.modo-claro .galeria-item__legenda {
+    background: linear-gradient(180deg, transparent, rgba(238, 248, 245, 0.98) 70%);
+    color: #10212a;
+}
+
+/* Mostra a legenda (surge de baixo) no hover */
+.galeria-item:hover .galeria-item__legenda {
+    transform: translateY(0);
+}
+
+/* ANIMAÇÃO DE MOVIMENTO (Flutuação suave para chamar atenção) */
+@keyframes flutuarAgro {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(0.4deg); /* Sobe e inclina sutilmente */
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+/* ======================================================= */
+
+.painel-metricas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.linha-metrica {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.barra-metrica {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+html.modo-claro .barra-metrica {
+    background: rgba(8, 122, 70, 0.13);
+}
+
+.barra-metrica__preenchimento {
+    height: 100%;
+}
+
+.barra-metrica__preenchimento--agua { width: 82%; background: var(--cor-azul-claro); }
+.barra-metrica__preenchimento--energia { width: 74%; background: var(--cor-verde-destaque); }
+.barra-metrica__preenchimento--precisao { width: 91%; background: var(--cor-amarelo); }
+.barra-metrica__preenchimento--desperdicio { width: 68%; background: #ff6b6b; }
+
+.modal {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.12s ease, visibility 0.12s ease;
+}
+
+.modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.modal__content {
+    position: relative;
+    max-width: 92vw;
+    max-height: 86vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.modal__image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 92vw;
+    max-height: 82vh;
+    background: var(--cor-fundo-card);
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.item-timeline {
+    padding: 20px; /* AJUSTE: Respiro interno na linha do tempo */
+    border-left: 3px solid var(--cor-verde-destaque);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 15px;
+}
+
+.item-timeline p {
+    line-height: 1.5;
+    margin-bottom: 0; /* Controlado pelo fluxo da timeline */
+}
+
+html.modo-claro .item-timeline {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.card-mensagem {
+    flex: 1;
+    min-width: 280px;
+    min-height: 355px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 25px;
+}
+
+html.modo-claro .card-mensagem {
+    border-color: rgba(8, 122, 70, 0.18);
+}
+
+.mensagem-oculta {
+    position: absolute;
+    top: 24px;
+    right: 18px;
+    bottom: 78px;
+    left: 18px;
+    z-index: 3;
+    display: block;
+    overflow-y: auto;
+    padding: 20px; /* AJUSTE: Mais espaço interno */
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    background: rgba(10, 34, 53, 0.96);
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    line-height: 1.6; /* AJUSTE: Leitura fluida no modal/revelar */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.mensagem-oculta p {
+    margin-bottom: 1rem;
+}
+
+html.modo-claro .mensagem-oculta {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(8, 122, 70, 0.22);
+}
+
+.mensagem-oculta--visivel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.btn-revelar {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.btn-revelar--ativo {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+html.modo-claro .btn-revelar--ativo {
+    background: #ffffff;
+    color: var(--cor-verde-destaque);
+    border: 1px solid rgba(8, 122, 70, 0.22);
+}
+
+.rodape-principal--amplo {
+    text-align: left;
+    padding: 40px 5%;
+}
+
+/* ==========================================================================
+   EFEITO DAS BOLHAS FLUTUANTES (PARTÍCULAS) & BARRA DE PROGRESSO
+   ========================================================================== */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    bottom: -30px;
+    background: radial-gradient(circle, rgba(54, 255, 145, 0.35) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: voarParaCima var(--duracao, 8s) linear infinite;
+    opacity: var(--opacidade, 0.5);
+}
+
+/* CORREÇÃO: Alinhado com o elemento pai HTML raiz */
+html.modo-claro .particle {
+    background: radial-gradient(circle, rgba(8, 122, 70, 0.34) 0%, rgba(0, 111, 138, 0.16) 46%, transparent 72%);
+    box-shadow: 0 0 14px rgba(8, 122, 70, 0.18);
+    opacity: calc(var(--opacidade, 0.5) + 0.18);
+}
+
+@keyframes voarParaCima {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    15% { opacity: var(--opacidade, 0.5); }
+    85% { opacity: var(--opacidade, 0.5); }
+    100% { transform: translateY(-110vh) translateX(var(--desvio, 45px)); opacity: 0; }
+}
+
+.linha-progresso,
+.progress-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cor-verde-destaque), var(--cor-azul-claro));
+    width: 0%;
+    z-index: 1000;
+}
+
+html.modo-claro .linha-progresso,
+html.modo-claro .progress-line {
+    background: linear-gradient(90deg, #087a46, #006f8a);
+}
+
+/* ==========================================================================
+   RODAPÉ (FOOTER)
+   ========================================================================== */
+.rodape-principal {
+    width: 100%;
+    background-color: #04101b;
+    border-top: 1px solid var(--cor-borda);
+    padding: 30px 24px; /* AJUSTE: Proteção lateral no rodapé */
+    text-align: center;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    color: var(--cor-texto-mutado);
+    transition: background-color 0.3s;
+}
+
+.rodape-principal p {
+    margin-bottom: 0; /* Reseta espaçamento do parágrafo único de créditos */
+}
+
+/* Mudança de cor de fundo do rodapé no modo claro */
+html.modo-claro .rodape-principal {
+    background-color: #e2ede9;
+    color: #365449;
+}
+
+.botao-subir {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    min-height: 46px;
+    padding: 10px 16px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    background: linear-gradient(135deg, var(--cor-verde-destaque), var(--cor-azul-claro));
+    color: #04150d;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(14px);
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+}
+
+html.modo-claro .botao-subir {
+    background: #ffffff;
+    border: 1px solid rgba(8, 122, 70, 0.34);
+    color: #087a46;
+    box-shadow: 0 12px 30px rgba(8, 122, 70, 0.18);
+}
+
+.botao-subir.visivel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.botao-subir:hover,
+.botao-subir:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.3);
+}
+
+html.modo-claro .botao-subir:hover,
+html.modo-claro .botao-subir:focus-visible {
+    background: var(--cor-verde-destaque);
+    color: #ffffff;
+    box-shadow: 0 16px 36px rgba(8, 122, 70, 0.28);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE COMPLETA (Celular e Tablet)
+   ========================================================================== */
+@media (max-width: 850px) {
+    .menu-topo {
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+        gap: 12px;
+    }
+    .links-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .links-menu a {
+        font-size: 0.85rem;
+        padding: 4px 8px;
+    }
+    .cards-inicio-horizontal {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .galeria-missal {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+    .bloco-autor,
+    .bloco-autor--invertido {
+        flex-direction: column;
+        padding: 30px 20px; /* AJUSTE: Mais compacto em tablets */
+    }
+    .modal__content {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+    .modal__image {
+        max-width: 95vw;
+        max-height: 75vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .conteudo-principal, main {
+        padding: 30px 16px; /* AJUSTE: Margem segura ideal para smartphones pequenos */
+    }
+    .caixa-boas-vindas {
+        width: 100%; 
+        padding: 35px 20px; /* AJUSTE: Otimiza espaço na tela inicial do celular */
+    }
+    .form-card {
+        padding: 25px 20px; /* AJUSTE: Evita esmagamento de texto em celulares */
+    }
+    .titulo-principal {
+        font-size: 2rem;
+    }
+    .cards-inicio-horizontal {
+        grid-template-columns: 1fr;
+    }
+    .galeria-missal {
+        grid-template-columns: 1fr;
+    }
+}
