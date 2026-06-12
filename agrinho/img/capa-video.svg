@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="t d">
+    <title id="t">Poster de video</title>
+    <desc id="d">Imagem abstrata de tecnologia verde para area de video.</desc>
+    <rect width="900" height="520" fill="#06121f"/>
+    <path d="M0 360C180 260 330 330 500 250C665 172 760 210 900 120V520H0Z" fill="#173f2a"/>
+    <path d="M0 430C200 330 410 395 610 310C760 246 830 280 900 230V520H0Z" fill="#0b5b52"/>
+    <circle cx="690" cy="150" r="84" fill="#ffd166" opacity=".75"/>
+    <g stroke="#36ff91" stroke-width="3" opacity=".7"><path d="M80 100H820M120 160H780M70 220H830"/><path d="M160 80V440M330 60V470M500 80V440M670 50V460"/></g>
+    <polygon points="410,210 410,320 515,265" fill="#36ff91"/>
+</svg>

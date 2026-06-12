@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="t d">
+    <title id="t">Sensores de solo</title>
+    <desc id="d">Sensores digitais medindo umidade do solo.</desc>
+    <rect width="900" height="620" fill="#092238"/>
+    <path d="M0 395C180 335 330 360 520 310C710 260 790 290 900 245V620H0Z" fill="#173f2a"/>
+    <g fill="#ffd166"><circle cx="200" cy="320" r="16"/><circle cx="450" cy="270" r="16"/><circle cx="700" cy="325" r="16"/></g>
+    <g stroke="#39d6ff" stroke-width="5"><path d="M200 320V455M450 270V455M700 325V455"/><path d="M200 320L450 270L700 325"/></g>
+    <g stroke="#36ff91" stroke-width="6"><path d="M0 500H900"/><path d="M0 560H900"/></g>
+</svg>

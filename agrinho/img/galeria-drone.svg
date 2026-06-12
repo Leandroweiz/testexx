@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="t d">
+    <title id="t">Drone agricola</title>
+    <desc id="d">Drone sobre lavoura sustentavel.</desc>
+    <rect width="900" height="620" fill="#06121f"/>
+    <path d="M0 390C180 320 330 350 520 300C690 255 790 280 900 225V620H0Z" fill="#1f8c54"/>
+    <g stroke="#36ff91" stroke-width="7"><path d="M40 520C250 410 470 450 720 340"/><path d="M160 600C360 480 590 510 850 390"/></g>
+    <g transform="translate(330 170)" stroke="#39d6ff" stroke-width="10" fill="none"><path d="M0 60H240M120 -30V150"/><circle cx="0" cy="60" r="42"/><circle cx="240" cy="60" r="42"/><circle cx="120" cy="-30" r="42"/><circle cx="120" cy="150" r="42"/><rect x="82" y="24" width="76" height="72" rx="14" fill="#36ff91" stroke="none"/></g>
+</svg>

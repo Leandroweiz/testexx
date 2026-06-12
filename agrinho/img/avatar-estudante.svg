@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="t d">
+    <title id="t">Avatar do estudante</title>
+    <desc id="d">Avatar autoral para representar foto do estudante.</desc>
+    <rect width="900" height="900" fill="#06121f"/>
+    <circle cx="450" cy="310" r="145" fill="#ffd166"/>
+    <path d="M235 790C260 610 345 525 450 525C555 525 640 610 665 790Z" fill="#36ff91"/>
+    <path d="M315 335C360 440 540 440 585 335C575 470 520 530 450 530C380 530 325 470 315 335Z" fill="#f4c08a"/>
+    <path d="M285 275C335 150 555 145 620 275C560 235 420 250 340 295Z" fill="#123c2a"/>
+    <g stroke="#39d6ff" stroke-width="10" fill="none"><path d="M245 760H655"/><path d="M310 670H590"/></g>
+    <text x="450" y="850" text-anchor="middle" fill="#f4fbff" font-family="Arial" font-size="38" font-weight="700">Foto do estudante</text>
+</svg>

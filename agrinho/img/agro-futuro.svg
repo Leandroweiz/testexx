@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="t d">
+    <title id="t">Fazenda futurista sustentavel</title>
+    <desc id="d">Paisagem rural com lavoura, mata, rio, energia solar e tecnologia.</desc>
+    <defs>
+        <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#07192a"/><stop offset=".52" stop-color="#0b3550"/><stop offset="1" stop-color="#173f2a"/></linearGradient>
+        <linearGradient id="field" x1="0" x2="1"><stop stop-color="#36ff91"/><stop offset=".5" stop-color="#ffd166"/><stop offset="1" stop-color="#39d6ff"/></linearGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect width="1400" height="900" fill="url(#sky)"/>
+    <circle cx="1080" cy="140" r="72" fill="#ffd166" filter="url(#glow)"/>
+    <path d="M0 520C260 420 430 500 680 405C910 318 1120 360 1400 270V900H0Z" fill="#10351f"/>
+    <path d="M0 650C280 560 490 610 720 520C960 427 1160 520 1400 420V900H0Z" fill="#1e7c4c"/>
+    <path d="M0 760C280 650 520 715 760 615C1010 512 1190 650 1400 535V900H0Z" fill="#7b5b2c"/>
+    <g stroke="url(#field)" stroke-width="10" opacity=".85"><path d="M80 780C320 650 560 700 820 590"/><path d="M180 880C420 730 650 760 970 650"/><path d="M0 700C240 620 500 645 760 545"/></g>
+    <g fill="#36ff91" opacity=".95"><circle cx="140" cy="430" r="70"/><circle cx="230" cy="390" r="86"/><circle cx="330" cy="430" r="70"/><rect x="218" y="405" width="28" height="170" rx="14" fill="#173f2a"/></g>
+    <g filter="url(#glow)"><path d="M840 500H1050L1110 650H900Z" fill="#102d46" stroke="#39d6ff" stroke-width="6"/><path d="M895 512L955 642M960 505L1020 635M850 560H1072M880 615H1095" stroke="#39d6ff" stroke-width="4"/></g>
+    <g fill="#fff"><rect x="570" y="470" width="160" height="100" rx="8"/><path d="M550 475L650 385L750 475Z" fill="#ff6b3d"/><rect x="632" y="520" width="38" height="50" fill="#7b5b2c"/></g>
+    <g stroke="#39d6ff" stroke-width="8" fill="none" opacity=".8"><path d="M570 230C630 180 715 180 770 232"/><path d="M610 275C650 245 700 245 735 276"/><path d="M645 315C670 298 700 298 720 316"/></g>
+</svg>

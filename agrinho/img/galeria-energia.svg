@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="t d">
+    <title id="t">Energia renovavel</title>
+    <desc id="d">Paineis solares e energia limpa no campo.</desc>
+    <rect width="900" height="620" fill="#06121f"/>
+    <circle cx="690" cy="130" r="72" fill="#ffd166"/>
+    <path d="M0 395C230 330 390 370 560 310C730 250 820 280 900 245V620H0Z" fill="#17452d"/>
+    <g fill="#102d46" stroke="#39d6ff" stroke-width="6"><path d="M180 330H390L330 485H120Z"/><path d="M520 300H730L670 455H460Z"/></g>
+    <g stroke="#36ff91" stroke-width="5"><path d="M210 330L150 485M280 330L220 485M350 330L290 485M145 395H365M120 455H340"/></g>
+</svg>

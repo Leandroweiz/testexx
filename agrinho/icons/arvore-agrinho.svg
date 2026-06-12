@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="titulo desc">
+    <title id="titulo">Árvore Agrinho 2026</title>
+    <desc id="desc">Ícone minimalista de árvore verde com tronco e copa geométrica.</desc>
+    <rect width="128" height="128" rx="28" fill="#06121f"/>
+    <path d="M64 19C43 36 31 54 31 72C31 89 45 101 64 101C83 101 97 89 97 72C97 54 85 36 64 19Z" fill="#36ff91"/>
+    <path d="M64 33C50 47 43 60 43 72C43 84 52 91 64 91C76 91 85 84 85 72C85 60 78 47 64 33Z" fill="#0d5f39" opacity="0.42"/>
+    <path d="M64 57V108" stroke="#36ff91" stroke-width="10" stroke-linecap="round"/>
+    <path d="M64 78C52 72 43 64 37 53" stroke="#06121f" stroke-width="7" stroke-linecap="round"/>
+    <path d="M64 84C78 77 88 67 94 54" stroke="#06121f" stroke-width="7" stroke-linecap="round"/>
+    <path d="M42 110H86" stroke="#36ff91" stroke-width="9" stroke-linecap="round"/>
+</svg>
